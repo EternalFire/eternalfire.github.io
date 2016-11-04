@@ -16,6 +16,14 @@ main {
 	width: 100%;	
 }
 
+#page-foot {
+	color: white;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
 #main-special {	
 	color: white;
 

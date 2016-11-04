@@ -21,9 +21,10 @@ jQuery(function($){
 		
 	},
 	initQuestion = function() {
-		var max = 101, min = 1;
-		questionText = Math.floor(Math.random() * (max - min) + 1) + min + "";
-
+		lastQuestionText = questionText;
+		while(lastQuestionText == questionText) {
+			questionText = getRandomQuestion(questionLib);
+		}
 		question.text(questionText);
 	},
 	initAnswer = function() {
@@ -37,20 +38,27 @@ jQuery(function($){
 	},
 	initQuestionLib = function() {
 		return [
-			window
+			"hello",
+			"jQuery",
+			"HTML",
+			"HTTP",
+			"CSS"
 		]
+	},
+	getRandomInt = function(min, max) {
+	  min = Math.ceil(min);
+	  max = Math.floor(max);
+	  return Math.floor(Math.random() * (max - min)) + min;
+	},
+	getRandomQuestion = function(qLib) {
+		return qLib[getRandomInt(0, qLib.length)];
 	}
 	
 	// init variable
 	// var winWidth = $(window).width(),
 	// 	winHeight = $(window).height(),
 	var 
-		quiz = $('#quiz'),	// questionLib.forEach(function(e){
-	// 	for (var key in e) {
-	// 		console.log("key = ", key, "func = ",  e[key]);
-	// 	}
-	// })
-
+		quiz = $('#quiz'),
 		question = $('#question'),
 		answer = $('#answer'),
 		item = $('.item')		
@@ -58,10 +66,11 @@ jQuery(function($){
 
 	var 
 	questionText = "",
+	lastQuestionText = "",
 	questionLib = initQuestionLib()
-	;	
+	;
 
-	
+
 
 	// 
 	// 
