@@ -5,38 +5,54 @@
 	<title>Magic &lt;=&gt; Code</title>
 	<meta name="description" content="web html js css 前端 代码 blog hzh">
 	<meta name="author" content="eternalfire">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="//cdn.bootcss.com/normalize/5.0.0/normalize.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">	
 	<link rel="shortcut icon" href="/favicon.ico"/>
 	<link rel="bookmark" href="/favicon.ico"/>
+	<link href="//cdn.bootcss.com/normalize/5.0.0/normalize.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
 </head>
-<body>	
-	<header></header>
-	<main id="main-special">
-		<div id="quiz">			
+<body>
+	<div class="bg">
+	</div>
+	<header class="flex-container">
+		<h1>Welcome!</h1>
+	</header>
+
+	<main>
+<!-- 		<div id="quiz">			
 			<p id="question">hello?</p>
 			<input id="answer" type="text" value="hello world" >
 		</div>
-
-		<div class="main-container flex-container">			
-			<div class="item flex-container" data-link="https://eternalfire.github.io/firesBlog/">
+ -->
+		<div class="main-container flex-container">						
+			<a class="item flex-container" href="https://eternalfire.github.io/firesBlog/">
 				<h2>blog</h2>
-			</div>
+			</a>
 
-			<div class="item flex-container" data-link="http://works.simplesns.net">
+			<a class="item flex-container" href="http://works.simplesns.net">
 				<h2>works</h2>
-			</div>
-<!-- 			<div class="item" data-link=""></div>
-			
-			<div class="item" data-link=""></div>
-	 		<div class="item" data-link=""></div>	
-			<div class="item" data-link=""></div>
+			</a>
 
-			<div class="item" data-link=""></div>
-			<div class="item" data-link=""></div>
-			<div class="item" data-link=""></div>
- --> 		
+<!-- 			<a href="" class="item flex-container">
+				<h2>example..</h2>
+			</a>
+
+			<a href="" class="item flex-container">
+				<h2>sample01</h2>
+			</a>
+
+			<a href="" class="item flex-container">
+				<h2>sample02</h2>
+			</a>
+
+			<a href="" class="item flex-container">
+				<h2>sample03</h2>
+			</a>
+
+			<a href="" class="item flex-container">
+				<h2>sample04</h2>
+			</a> -->
+
  		</div> 		
 	</main>
 	
@@ -46,7 +62,65 @@
 		</div>
 	</footer>
 
-	<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
-	<script src="/app.js"></script>
+	<!-- <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script> -->
+	<!-- <script src="/app.js"></script> -->
+<!-- 	<script>
+		jQuery(function($){
+			var 
+				p0 = $('<p>0</p>'),
+				p1 = $('<p>1</p>'),
+				bg = $('.bg'),
+				row,
+				col
+			;
+
+			bg.append(p1);
+
+			row = Math.floor(bg.height() / p1.height()) + 1;
+			col = Math.floor(bg.width() / p1.width()) + 1;
+
+			for (let i = 0; i < row; i++) {
+				for (let j = 0; j < col; j++) {
+					let element;
+
+					if (Math.random(0, 1) >= 0.5) {
+						element = p1.clone();
+					} else {
+						element = p0.clone();
+					}
+
+					element.offset({
+						top: p1.height() * i,
+						left: p1.width() * j
+					});
+					
+					bg.append(element);
+
+					let originTop = element.offset().top;
+					let direction = 'up';
+
+					(function(){
+
+						var css = {
+							top: "-10%"
+						};
+
+						if (direction == 'up') {
+							direction = 'down';
+							css.top = originTop + "px";
+						} else {
+							direction = 'up';
+						}
+
+						element.animate(css, 1000 * (j + 1), arguments.callee);
+
+					}());
+				}
+			}
+
+			p1.remove();
+			p0.remove();
+		});
+	</script> -->
 </body>
 </html>

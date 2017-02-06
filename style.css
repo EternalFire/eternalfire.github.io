@@ -1,36 +1,36 @@
 * {
 	box-sizing: border-box;
-	font-family: "Comic Sans MS", cursive, monospace;
+	font-family: Arial, monospace, "Comic Sans MS";
 	font-weight: bold;
 	font-size: 23px;
 	letter-spacing: 3px;
+	color: white;
 }
+
 body {
 	background-color: black;
 	width: 100%;
 	height: 100%;
-	min-width: 400px;
-	min-height: 1000px;
+	/*min-width: 400px;*/
+	min-height: 700px;
 	position: relative;	
+
+	display: flex;
+	flex-flow: column wrap;
+}
+
+body > header {
+	/*background: black;*/
+	flex: 1;
 }
 
 main {
 	position: relative;
 	width: 100%;
 	height: auto;
-	min-height: 90%;
-}
+	/*min-height: 90%;*/
+	flex: 3;
 
-#page-foot {
-	color: white;
-
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-}
-
-#main-special {	
 	color: white;
 
 	display: flex;
@@ -41,7 +41,13 @@ main {
 	align-content: space-around;
 }
 
-#quiz {
+#page-foot {
+	color: white;
+
+	flex: 1;
+}
+
+/*#quiz {
 	width: 90%;
 	max-width: 1280px;
 	padding: 20px;
@@ -67,29 +73,28 @@ main {
 	border: 5px solid yellowgreen;
 	border-radius: 0;
 }
-
+*/
 .flex-container {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-around;
 	align-items: center;
-	align-content: space-between;
+	/*align-content: space-between;*/
 }
 
 .main-container {
 	width: 90%;
-	/*height: auto;*/
-	max-width: 1280px;
-	max-height: 640px;
+	/*height: 90%;*/
+	/*max-width: 1280px;*/
+	/*max-height: 640px;*/
 
 	padding: 20px;
-	/*margin: auto;*/
+	margin: auto;
 
-	background-color: black;
+	/*background-color: black;*/
 	border-radius: 10px;
 	border: 3px solid white;
 
-	/*overflow-y: scroll;	*/
 	position: relative;
 }
 
@@ -99,18 +104,27 @@ main {
 	border-radius: 20px;
 	width: 320px;
 	height: 240px;
+	overflow: hidden;
 	margin: 20px;	
 
-	transition: border-radius 1.0s;
-	transition: font-size 1.0s
+	transition: all 1.0s;
 }
 .item:hover {
 	cursor: pointer;
 	text-shadow:2px 2px 10px gray;
-	border-radius: 0%;
 	font-size: 60px;
 }
 
 .item h2 {
 	font-size: inherit;
 }
+
+.bg {
+	background: linear-gradient(171deg, hsla(0, 0%, 0%, 0.4) 20%, yellowgreen 100%);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: -1;
+	overflow: hidden;
+}
+
